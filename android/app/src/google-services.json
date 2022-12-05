@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "21428628680",
+    "project_id": "refel-afc77",
+    "storage_bucket": "refel-afc77.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:21428628680:android:1a93e76ebab4bf699cc9fd",
+        "android_client_info": {
+          "package_name": "com.example.refuel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "21428628680-kmtr7v98stige1f6htojis3qh6fviom0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2oggQfHQmhPItRrKFCT2_aHvJ6S1rSVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "21428628680-kmtr7v98stige1f6htojis3qh6fviom0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
