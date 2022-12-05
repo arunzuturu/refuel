@@ -136,6 +136,7 @@ class _TeacherState extends State<Teacher> {
       "type" : _type.text.toString(),
       "loc": _location.text.toString(),
       "uid": user!.uid.toString(),
+      "email": user!.email.toString()
     };
     await docUser.set(json);
   }

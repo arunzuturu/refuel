@@ -23,6 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+
+  mailto: ^2.0.0
   sidebarx: ^0.14.0
   cloud_firestore: ^4.1.0
   cupertino_icons: ^1.0.0

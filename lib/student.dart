@@ -3,9 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:refuel/Models/product_model.dart';
-
+import 'package:mailto/mailto.dart';
 import 'login.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 class Student extends StatefulWidget {
   const Student({super.key});
 
@@ -50,22 +50,27 @@ class _StudentState extends State<Student> {
     );
   }
   Widget buildCard(Product prod){
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        color: Colors.white38,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Text("Name : ${prod.name}"),
-              SizedBox(height: 5,),
-              Text("Type : ${prod.type}"),
-              SizedBox(height: 5,),
-              Text("Price : ${prod.price}"),
-              SizedBox(height: 5,),
-              Text("Location : ${prod.loc}"),
-            ],
+    return InkWell(
+      onTap: ()async{
+        await launchMailto(prod.email.toString());
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Container(
+          color: Colors.white38,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Text("Name : ${prod.name}"),
+                SizedBox(height: 5,),
+                Text("Type : ${prod.type}"),
+                SizedBox(height: 5,),
+                Text("Price : ${prod.price}"),
+                SizedBox(height: 5,),
+                Text("Location : ${prod.loc}"),
+              ],
+            ),
           ),
         ),
       ),
@@ -81,5 +86,18 @@ class _StudentState extends State<Student> {
         builder: (context) => LoginPage(),
       ),
     );
+  }
+
+  launchMailto(to) async {
+    final mailtoLink = Mailto(
+      to: [to.toString()],
+      cc: ['cc1@example.com', 'cc2@example.com'],
+      subject: 'mailto example subject',
+      body: 'mailto example body',
+    );
+    // Convert the Mailto instance into a string.
+    // Use either Dart's string interpolation
+    // or the toString() method.
+    await launch('$mailtoLink');
   }
 }

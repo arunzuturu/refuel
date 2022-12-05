@@ -4,8 +4,9 @@ class Product {
   String? price;
   String? type;
   String? uid;
+  String? email;
 
-  Product({this.name, this.loc, this.price, this.type, this.uid});
+  Product({this.name, this.loc, this.price, this.type, this.uid, this.email});
 
 
   Map<String, dynamic> toJson() {
@@ -15,6 +16,7 @@ class Product {
     data['price'] = this.price;
     data['type'] = this.type;
     data['uid'] = this.uid;
+    data['email'] = this.email;
     return data;
   }
 
@@ -23,7 +25,8 @@ class Product {
       loc : json['loc'],
       price : json['price'],
   type : json['type'],
-  uid : json['uid']
+  uid : json['uid'],
+    email : json['email']
   );
 
 
